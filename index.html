@@ -217,29 +217,41 @@
     .work-card {
       margin-top: 56px;
       border: 1px solid var(--line-strong);
-      min-height: 330px;
-      padding: clamp(30px, 4vw, 54px);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-      gap: 50px;
-      position: relative;
+      padding: clamp(18px, 2.4vw, 28px);
       background:
-        linear-gradient(135deg, rgba(137,150,255,.08), transparent 38%),
-        rgba(255,255,255,.015);
+        linear-gradient(135deg, rgba(137,150,255,.06), transparent 40%),
+        rgba(255,255,255,.012);
     }
 
-    .work-card::after {
-      content: "Z";
-      position: absolute;
-      top: 22px;
-      right: 36px;
-      font-size: clamp(90px, 13vw, 180px);
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: -.08em;
-      color: rgba(255,255,255,.025);
-      pointer-events: none;
+    .work-visual {
+      display: block;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      background: #05050b;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .work-visual:hover {
+      transform: translateY(-2px);
+      border-color: rgba(137,150,255,.42);
+    }
+
+    .work-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .work-meta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 42px;
+      align-items: end;
+      padding: 28px 10px 4px;
     }
 
     .work-label {
@@ -247,22 +259,20 @@
       font: 600 11px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       text-transform: uppercase;
       letter-spacing: .14em;
-      margin-bottom: 42px;
+      margin-bottom: 14px;
     }
 
     .work-card h3 {
-      margin: 0 0 14px;
-      font-size: clamp(36px, 5vw, 68px);
-      line-height: .98;
-      letter-spacing: -.05em;
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1;
+      letter-spacing: -.045em;
       font-weight: 630;
     }
 
-    .work-card p { margin: 0; max-width: 610px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+    .work-card p { margin: 0; max-width: 660px; color: var(--muted); font-size: 15px; line-height: 1.65; }
 
     .arrow-link {
-      position: relative;
-      z-index: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -274,6 +284,7 @@
       color: #080808;
       font-size: 13px;
       font-weight: 650;
+      white-space: nowrap;
       transition: transform .18s ease, background .18s ease;
     }
 
@@ -311,7 +322,7 @@
       .principles { grid-template-columns: 1fr; }
       .principle, .principle + .principle { padding: 20px 0; min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .principle:last-child { border-bottom: 0; }
-      .work-card { grid-template-columns: 1fr; align-items: start; }
+      .work-meta { grid-template-columns: 1fr; gap: 24px; }
       .arrow-link { justify-self: start; }
       .company-statement { grid-template-columns: 1fr; gap: 18px; }
     }
@@ -323,8 +334,8 @@
       .hero { padding-top: 90px; }
       h1 { font-size: clamp(56px, 17vw, 82px); }
       .signal-inner { overflow: hidden; justify-content: flex-start; }
-      .work-card { min-height: 300px; }
-      .work-card::after { right: 24px; }
+      .work-card { padding: 14px; }
+      .work-meta { padding: 22px 4px 6px; }
       .footer-grid { flex-direction: column; }
     }
 
@@ -382,12 +393,17 @@
             </div>
 
             <article class="work-card">
-              <div>
-                <div class="work-label">Selected work</div>
-                <h3>ZEUS</h3>
-                <p>Onchain financial infrastructure connecting markets, capital and programmable execution.</p>
+              <a class="work-visual" href="https://zeustrade.io/" target="_blank" rel="noreferrer" aria-label="Explore ZEUS">
+                <img src="/assets/zeus-project.webp" alt="ZEUS onchain financial infrastructure" loading="lazy" />
+              </a>
+              <div class="work-meta">
+                <div>
+                  <div class="work-label">Selected work</div>
+                  <h3>ZEUS</h3>
+                  <p>Onchain financial infrastructure connecting markets, capital and programmable execution.</p>
+                </div>
+                <a class="arrow-link" href="https://zeustrade.io/" target="_blank" rel="noreferrer">Explore ZEUS ↗</a>
               </div>
-              <a class="arrow-link" href="https://zeustrade.io/" target="_blank" rel="noreferrer">Explore ZEUS ↗</a>
             </article>
           </div>
         </div>
