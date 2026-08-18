@@ -69,24 +69,17 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-size: 15px;
-      font-weight: 680;
-      letter-spacing: -.02em;
+      min-width: 0;
     }
 
-    .mark {
-      width: 28px;
-      height: 28px;
-      border: 1px solid var(--line-strong);
-      border-radius: 7px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.025);
+    .brand-logo {
+      display: block;
+      width: 176px;
+      height: auto;
+      max-height: 48px;
+      object-fit: contain;
+      object-position: left center;
     }
-
-    .mark svg { width: 17px; height: 17px; display: block; }
-    .limited { color: var(--dim); font-weight: 520; margin-left: 3px; }
 
     .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 13px; }
     .nav-links a { transition: color .18s ease; }
@@ -326,7 +319,7 @@
     @media (max-width: 680px) {
       .nav { min-height: 68px; }
       .nav-links a:not(:last-child) { display: none; }
-      .limited { display: none; }
+      .brand-logo { width: 145px; max-height: 42px; }
       .hero { padding-top: 90px; }
       h1 { font-size: clamp(56px, 17vw, 82px); }
       .signal-inner { overflow: hidden; justify-content: flex-start; }
@@ -346,12 +339,7 @@
     <header class="container">
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="ZEUS DAO Limited home">
-          <span class="mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 5H19L8.2 18.7H19" stroke="currentColor" stroke-width="2.25" stroke-linecap="square" stroke-linejoin="miter" />
-            </svg>
-          </span>
-          <span>ZEUS DAO <span class="limited">LIMITED</span></span>
+          <img class="brand-logo" src="/assets/zeus-dao-logo.webp" alt="ZEUS DAO" />
         </a>
         <div class="nav-links">
           <a href="#work">Work</a>
